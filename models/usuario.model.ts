@@ -16,7 +16,7 @@ const UsuarioShema = new Schema({
     }
 });
 
-interface IUsuario extends Document {
+export interface IUsuario extends Document {
     name: string,
     email: string,
     password: string
