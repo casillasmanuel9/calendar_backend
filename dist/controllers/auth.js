@@ -73,6 +73,6 @@ const RevalidarToken = (req, res) => __awaiter(void 0, void 0, void 0, function*
     const id = req.id;
     const name = req.name;
     const token = yield jwt_1.generarJWT(id, name);
-    res.json({ ok: true, msg: "renew", token });
+    res.json({ ok: true, msg: "renew", token, name, id });
 });
 exports.RevalidarToken = RevalidarToken;

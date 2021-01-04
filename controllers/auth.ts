@@ -66,5 +66,5 @@ export const RevalidarToken = async (req: any, res: Response) => {
     const id = req.id;
     const name = req.name;
     const token = await generarJWT(id, name);
-  res.json({ ok: true, msg: "renew", token });
+  res.json({ ok: true, msg: "renew", token, name, id });
 };
