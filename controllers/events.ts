@@ -56,7 +56,7 @@ export const actualizarEvento = async (req: any, res: Response) => {
       nuevoEvento,
       { new: true }
     );
-    return res.status(200).json({ ok: false, evento: eventoActualizado });
+    return res.status(200).json({ ok: true, evento: eventoActualizado });
   } catch (e) {
     console.log(e);
     return res.status(500).json({
@@ -84,7 +84,7 @@ export const eliminarEvento = async (req: any, res: Response) => {
     }
 
     await Evento.findByIdAndDelete(eventoId);
-    return res.status(200).json({ ok: false });
+    return res.status(200).json({ ok: true });
   } catch (e) {
     console.log(e);
     return res.status(500).json({

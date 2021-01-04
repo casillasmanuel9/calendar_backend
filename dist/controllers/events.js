@@ -56,7 +56,7 @@ const actualizarEvento = (req, res) => __awaiter(void 0, void 0, void 0, functio
         }
         const nuevoEvento = Object.assign(Object.assign({}, req.body), { user: userId });
         const eventoActualizado = yield evento_model_1.Evento.findByIdAndUpdate(eventoId, nuevoEvento, { new: true });
-        return res.status(200).json({ ok: false, evento: eventoActualizado });
+        return res.status(200).json({ ok: true, evento: eventoActualizado });
     }
     catch (e) {
         console.log(e);
@@ -81,7 +81,7 @@ const eliminarEvento = (req, res) => __awaiter(void 0, void 0, void 0, function*
                 .json({ ok: false, msg: "no tiene privilegio de editar este evento" });
         }
         yield evento_model_1.Evento.findByIdAndDelete(eventoId);
-        return res.status(200).json({ ok: false });
+        return res.status(200).json({ ok: true });
     }
     catch (e) {
         console.log(e);
